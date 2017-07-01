@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>FireEater64</Authors>
+    <Company></Company>
+    <Product />
+    <PackageTags>CityMapper API</PackageTags>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Description>Basic async wrapper around the CityMapper API.</Description>
+    <PackageProjectUrl>https://github.com/FireEater64/Citymapper.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FireEater64/Citymapper.NET</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_1</DefineConstants>
+    <OutputPath>bin\Debug\netstandard1.1\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>
