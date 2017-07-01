@@ -1,6 +1,3 @@
-using System;
-using System.Net.Http;
-using System.Runtime.InteropServices;
 using Citymapper.NET.Types;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RichardSzalay.MockHttp;
@@ -21,10 +18,11 @@ namespace Citymapper.NET.Test
             var underTest = new Citymapper("fake-api-key", mockHttp.ToHttpClient());
 
             // Act
-            var travelTime = underTest.TravelTimeInMinutes(new Coordinate(), new Coordinate());
+            var travelTime = underTest.TravelTimeInMinutesAsync(new Coordinate(), new Coordinate());
 
             // Assert
-            Assert.AreEqual(travelTime, 42);
+            // TODO: Possibly not best practice
+            Assert.AreEqual(travelTime.Result, 42);
             mockHttp.VerifyNoOutstandingExpectation();
         }
     }

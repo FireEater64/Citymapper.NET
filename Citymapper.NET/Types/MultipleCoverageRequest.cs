@@ -6,12 +6,12 @@ namespace Citymapper.NET.Types
     [JsonObject]
     internal class MultipleCoverageRequest
     {
-        internal MultipleCoverageRequest(List<CoveragePoint> givenPoints)
+        internal MultipleCoverageRequest(List<CoveragePointRequest> givenPoints)
         {
             Points = givenPoints;
         }
 
         [JsonProperty("points")]
-        private List<CoveragePoint> Points { get; set; }
+        private List<CoveragePointRequest> Points { get; set; }
     }
 }
